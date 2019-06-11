@@ -1,0 +1,85 @@
+<van-steps
+  steps="{{ steps }}"
+  active="{{ active }}"
+  active-color="#000000"
+/>
+
+<!--步骤一-->
+<van-transition show="{{ show_scan }}" custom-class="block"  duration="600">
+<view class='a_box'>
+<view class='a_des'>国际标准书号（International Standard Book Number），简称ISBN，是专门为识别图书等文献而设计的国际编号。</view>
+<view class='a_des'>为保障发布信息的准确可靠，本程序仅支持扫码isbn码录入书籍信息，谢谢理解！！！</view>
+<view class='a_des'>找出您要转让的书，然后翻到背面，右下角即显示的为isbn码。</view>
+
+<image src='https://qiniu.98api.cn/cqubook/img/isbn.jpg' mode='widthFix'></image>
+
+</view>
+
+
+
+
+<view class='scan' >
+<van-button  type='yellow' round  custom-class='scan_button' bind:click="check_scan">点 击 扫 码</van-button>
+</view>
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
+</van-transition>
+
+<!--步骤二-->
+<van-transition show="{{ show_detail }}" custom-class="block"  duration="600">
+<view class="pic">
+<image src='{{bookinfo.pic}}'  mode='widthFix' />
+</view>
+<van-panel  title="{{bookinfo.title}}(第{{bookinfo.edition}})" desc="{{bookinfo.author}}" status="原价：{{bookinfo.price}}元">
+<van-cell title="{{bookinfo.publisher}}" value="出版时间：{{bookinfo.pubdate}}" />
+  <view class='des'>简介：{{bookinfo.summary}}</view>
+</van-panel>
+
+<van-notice-bar scrollable="false" text="{{text}}" />
+
+<van-cell title="转让价格">
+   <van-stepper
+    value="{{ selling }}"
+    integer
+    min="0"
+    max="100"
+    bind:change="selling"
+    input-width="40px"
+  />
+</van-cell>
+<van-cell-group>
+  <van-field
+    value="{{ message }}"
+    label="其它说明"
+    type="textarea"
+    placeholder="请输入补充说明，最多30字"
+    autosize
+    border="true"
+    bind:input="message"
+    maxlength='30'
+  />
+</van-cell-group>
+<view class='submit'>
+<van-button type="yellow" custom-class='submit_button' round bind:click='confirm'>马上发布</van-button>
+</view>
+</van-transition>
+
+<van-transition show="{{show_success}}" custom-class="block"  duration="600">
+<view class='a_box'>
+<image src='https://ws3.sinaimg.cn/large/005BYqpggy1g3v2c315sjj305k05kq2v.jpg'  mode='widthFix' />
+<view >恭喜您提交成功</view>
+<view class='c_box'>
+<view class='c_title'>温馨提示</view>
+<view class='c_des'>发布有效期为30天，逾期后将无法展示给其它用户</view>
+<view class='c_des'>您可以在您的个人中心擦亮即可保持最新发布状况</view>
+</view>
+
+
+</view>
+
+<van-row gutter="2" custom-class='scan'>
+  <van-col span="12" custom-class='again'><van-button round type="yellow" custom-class='success_button' bind:click='again'>再传一本</van-button></van-col>
+  <van-col span="12" custom-class='goto'><van-button round type="default"custom-class='success_button' bind:click='onshow'>查看发布</van-button></van-col>
+</van-row>
+
+</van-transition>

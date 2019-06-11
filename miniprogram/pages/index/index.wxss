@@ -1,0 +1,54 @@
+.pic{
+  height: 200rpx;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.pic image{
+  width: 200rpx;
+}
+
+.title{
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  font-size: medium;
+  color: #000000;
+  font-weight: bold;
+}
+.author{
+    height: 50rpx;
+  display: flex;
+  align-items: center;
+  font-size: small;
+  color: #747272;
+}
+
+.date{
+  height: 90rpx;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  font-size: small;
+}
+.price{
+  flex-grow: 5;
+  color: #ff0800;
+  font-size: large;
+}
+
+.day{
+  flex-grow:3;
+  color: #747272;
+}
+.card{
+  margin:20rpx;
+  padding:20rpx;
+ box-shadow: 0px 0px 3px #d3d3d3;
+ border-radius: 10rpx;
+}
+
+._search{
+  background-color: #fbbd08 !important;
+}

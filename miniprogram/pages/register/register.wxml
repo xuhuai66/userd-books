@@ -1,0 +1,88 @@
+
+<!--校区输入-->
+<demo-block title="将展示给意向买书同学">
+<view bindtap='in_campus'>
+<van-cell-group>
+<van-field
+    value="{{campus}}"
+    required
+ readonly
+    clearable
+    label="校区"
+    placeholder="选择校区"
+    size="large"
+  />
+</van-cell-group>
+</view>
+</demo-block>
+
+
+<van-popup
+  show="{{ show }}"
+  position="bottom"
+  overlay="{{overlay}}"
+  bind:close="onClose"
+>
+  <van-picker
+    show-toolbar
+    title="选择校区"
+    item-height="50"
+     default-index="{{ 2 }}"
+    columns="{{ campus_a }}"
+    bind:change="onChange"
+    bind:confirm="onConfirm"
+    bind:cancel="onCancel"
+    visible-item-count="{{4}}"
+  />
+</van-popup>
+
+<demo-block title="为保证意向买家能与你取得联系，请选择一项填写">
+<van-radio-group value="{{ kind }}" bind:change="onChange_radio" >
+  <van-cell-group>
+      <van-cell
+      title="微信
+      value-class="value-class"
+      clickable
+      data-name="微信"
+      bind:click="onClick"
+    >
+      <van-radio name="微信"  />
+    </van-cell>
+    <van-cell
+      title="QQ"
+      value-class="value-class"
+      clickable
+      data-name="QQ"
+      bind:click="onClick"
+    >
+      <van-radio name="QQ"  />
+    </van-cell>
+    <van-cell
+      title="手机"
+      value-class="value-class"
+      clickable
+      data-name="手机"
+      bind:click="onClick"
+    >
+      <van-radio name="手机"  />
+    </van-cell>
+  </van-cell-group>
+</van-radio-group>
+</demo-block>
+
+<van-field
+    required
+    value="{{ contact }}"
+    label="联系方式"
+    placeholder="请输入您的{{kind}}号"
+    error-message="{{error_contact}}"
+    bind:input='contact'
+    size="large"
+  />
+
+<view class='submit'>
+<van-button type="yellow" custom-class='submit_button' round bind:getuserinfo='getuser' open-type='getUserInfo'>马上提交</van-button>
+</view>
+
+
+<van-toast id="van-toast" />

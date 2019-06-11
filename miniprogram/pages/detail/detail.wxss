@@ -1,0 +1,32 @@
+@import "/color.wxss";
+@import "/icon.wxss";
+._pic{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+._pic image{
+  width:300rpx;
+}
+
+._des{
+  margin:20rpx;
+  font-size: small;
+  color: #888888;
+}
+page{
+  background: #ffffff;
+}
+
+
+.text-grey{
+color: #515151;
+}
+.bg-yellow {
+	background-color: #fbbd08;
+	color: #ffffff;
+}
+
+.share_button{
+  background: #ffffff;
+}

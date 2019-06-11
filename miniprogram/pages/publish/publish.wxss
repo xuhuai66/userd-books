@@ -1,0 +1,89 @@
+.scan{
+position: fixed;
+bottom: 30rpx;
+left: 0rpx;
+width: 100%;
+display: flex;
+ justify-content: center;
+}
+
+.scan_button{
+width: 400rpx;
+}
+
+.pic{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.pic image{
+  width:300rpx;
+}
+
+.des{
+  margin:20rpx;
+  font-size: small;
+  color: #888888;
+}
+
+.submit{
+  margin:30rpx;
+display: flex;
+justify-content: center;
+}
+
+.submit_button{
+
+width: 600rpx;
+}
+
+
+.again {
+  text-align: center;
+}
+.goto {
+  text-align: center;
+}
+.success_button{
+  width: 300rpx;
+}
+.success{
+  display: f
+}
+
+
+.a_box{
+  margin: 40rpx;
+  border-radius: 20rpx;
+  text-align: center;
+}
+
+.a_des{
+  font-size: small;
+  text-align: left;
+  padding:10rpx;
+  color: rgb(129, 129, 129);
+}
+.a_box image{
+  width: 300rpx;
+}
+
+.c_box{
+  margin-top:20rpx;
+box-shadow: 0px 0px 3px #d3d3d3;
+border-radius: 20rpx;
+}
+.c_title{
+  padding-top: 20rpx;
+width: 100%;
+font-size: large;
+text-decoration:underline;
+color: rgb(77, 77, 77);
+}
+.c_des{
+  text-align: left;
+  margin-left:15rpx;
+  padding: 15rpx;
+  font-size: medium;
+  color: rgb(77, 77, 77);
+}

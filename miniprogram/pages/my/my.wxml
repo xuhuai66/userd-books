@@ -1,0 +1,31 @@
+<view class=' s_top'>
+<view class='s_box'  bindtap="check_login" data-key='register'>
+     <view  class='s_userinfo' style="flex-grow:1;" >
+      <view class="s_userinfo-avatar"><open-data  type="userAvatarUrl"></open-data></view>
+     </view>
+     <view  style="flex-grow:4;" >
+            <view class='s_title'><open-data  type="userNickName"></open-data></view>
+             <view  class='s_title' ><van-icon name="location" /> {{userinfo.campus?userinfo.campus:'未知'}}</view>
+     </view> 
+ </view>
+  <view class='s_kb1'></view>
+ <view class='s_kb2'></view>
+ </view>
+<view class='s_content' >
+
+
+<view class='ss_content' wx:for='{{car_list}}' wx:key="{{item.key}}" bindtap="check_login" data-key='{{item.key}}'>
+ <van-cell value='{{item.content}}' icon="{{item.img}}" is-link size="large" border="{{false}}" >
+  <view slot="title">
+    <view class="van-cell-text">{{item.title}}</view>
+  </view>
+</van-cell>
+</view>
+
+<van-dialog id="van-dialog" />
+
+</view>
+
+<view class='tagg'>
+<van-tag round size="large" color="#ffdb6f" text-color="#313131"><van-icon color="#313131" name="edit"size='30rpx' /> 编辑资料</van-tag>
+</view>

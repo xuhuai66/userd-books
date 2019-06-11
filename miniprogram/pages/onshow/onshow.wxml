@@ -1,0 +1,29 @@
+
+
+<view wx:for="{{list}}" wx:key="*this" >
+   <view wx:for="{{item}}" wx:key="{{item._id}}">
+<view class='card'>
+<van-row>
+  <van-col span="8" custom-class='pic'  bindtap='goDetail' data-id='{{item._id}}'>
+  <image src='{{item.bookinfo.pic}}' mode='widthFix' lazy-load='true'></image>
+  </van-col>
+
+  <van-col span="16">
+  <view class='title text-cut'  bindtap='goDetail' data-id='{{item._id}}'><text> {{item.bookinfo.title}}(第{{item.bookinfo.edition}})</text></view>
+<view class='author text-cut'  bindtap='goDetail' data-id='{{item._id}}'><text>{{item.bookinfo.author}}</text></view>
+<view class='author text-cut'  bindtap='goDetail' data-id='{{item._id}}'><text>发布于：{{item.day}}</text></view>
+<view class='date'>
+ <view class='price'>¥{{item.selling}}.00元</view>
+<button class='crash yellow' bindtap='crash' data-id='{{item._id}}'>擦亮</button>
+<button class='crash red' bindtap='down' data-id='{{item}}'><text>下架</text></button>
+</view>
+  </van-col>
+</van-row>
+</view>
+   </view>
+</view>
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />
+
+
+<view wx:if='{{list[0]==""}}' style="text-align:center;color:#747272;font-size:medium;margin-top:30rpx">--暂无转让书籍--</view>

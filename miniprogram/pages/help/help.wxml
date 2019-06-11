@@ -1,0 +1,9 @@
+<van-collapse value="{{ activeName }}" bind:change="onChange" accordion wx:for="{{car_list}}" wx:key="{{item.key}}">
+  <van-collapse-item  title="{{item.title}}" name="{{item.key}}">
+    {{item.content}}
+  </van-collapse-item>
+</van-collapse>
+
+<view class='scan' >
+<van-button  type='yellow' round  custom-class='scan_button' open-type='feedback'>反馈报错</van-button>
+</view>

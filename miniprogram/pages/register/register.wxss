@@ -1,0 +1,23 @@
+.value-class {
+  flex: none !important;
+}
+
+.submit{
+  margin:30rpx;
+display: flex;
+justify-content: center;
+}
+
+.submit_button{
+
+width: 600rpx;
+}
+
+.van-radio__icon--checked{color:#fff;
+background-color:  #fbbd08 !important;
+border-color:  #fbbd08 !important;
+}
+
+.van-picker__cancel,.van-picker__confirm{
+  color:#fbbd08 !important;
+  }

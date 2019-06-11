@@ -1,0 +1,96 @@
+<view class="_pic">
+<image src='{{detail.bookinfo.pic}}'  mode='widthFix' lazy-load='true'/>
+</view>
+<van-panel  title="{{detail.bookinfo.title}}(第{{detail.bookinfo.edition}})" desc="{{detail.bookinfo.author}}" status="原价：{{detail.bookinfo.price}}元">
+<van-cell title="{{detail.bookinfo.publisher}}" value="出版时间：{{detail.bookinfo.pubdate}}" />
+  <view class='_des'>简介：{{detail.bookinfo.summary}}</view>
+</van-panel>
+
+
+
+
+
+
+    <van-dialog
+  use-slot
+  show="{{ show }}"
+  show-cancel-button
+  closeOnClickOverlay
+  bind:close="onClose"
+bind:confirm='save_poster'
+>
+  <image src="{{shareImage}}" mode='widthFix'/>
+</van-dialog>
+
+  <view class="cu-bar bg-white">
+    <view class="action">
+      <text class="cuIcon-titles text-yellow"></text>
+      <text class="text-lg text-bold text-grey">关于发布者</text>
+    </view>
+  </view>
+  <view class="cu-list menu-avatar">
+    <view class="cu-item">
+      <view class="cu-avatar round lg" style="background-image:url({{userinfo.avatarUrl}});"></view>
+      <view class="content">
+        <view class="text-grey">{{userinfo.nickName}}</view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">
+							<text class="cuIcon-locationfill text-grey  margin-right-xs"></text> {{userinfo.campus}}
+          </text>
+        </view>
+      </view>
+      <view class="action">
+       <view wx:if="{{userinfo.gender==2}}" class="cu-tag round bg-pink sub light">♀</view>
+        <view wx:if="{{userinfo.gender!==2}}" class="cu-tag round bg-blue sub light  text-lg">♂</view>
+      </view>
+    </view>
+        </view>
+<view class="cu-list menu">
+<view class="cu-item">
+      <view class="content padding-tb-sm" >
+        <view>
+          <text class="cuIcon-writefill text-yellow margin-right-xs"></text> 联系方式</view>
+        <view class="text-gray text-sm">
+         {{userinfo.kind}}：{{userinfo.contact}} </view>
+      </view>
+      <view class="action" bindtap='copy'>
+       <view  class="cu-tag bg-white lg text-lg">
+      	<text class="cuIcon-copy text-grey "></text>
+              </view>
+      </view>
+    </view>
+        </view>
+
+<view class='margin text-grey text-sub'>
+补充说明：{{detail.message?detail.message:'暂无说明'}}
+</view>
+
+
+
+
+
+
+<view class='cu-bar tabbar text-white'>已经底部啦~</view>
+          <view class="cu-bar  foot tabbar bg-white">
+        <view class="action" bindtap='home'>
+      <view class="cuIcon-cu-image">
+        <image src="/images/home.png"></image>
+      </view>
+      <view class="text-grey">首页</view>
+    </view>
+        <button class="action text-grey share_button" open-type="share">
+      <view class="cuIcon-cu-image">
+  <image src="/images/share.png"></image>
+      </view>
+      分享
+    </button>
+    <view class="action" bind:tap="check_draw">
+      <view class="cuIcon-cu-image">
+     <image src="/images/pyq.png"></image>
+      </view>
+      <view class="text-grey">海报</view>
+    </view>
+    <view class="bg-yellow submit" bindtap='buy'>¥ {{detail.selling}}.00元抢购</view>
+  </view>
+    <canvasdrawer painting="{{painting}}" class="canvasdrawer" bind:getImage="eventGetImage"/>
+    <van-dialog id="van-dialog" />

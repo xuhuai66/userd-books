@@ -1,0 +1,46 @@
+
+  <van-search
+    value="{{ key }}"
+    placeholder="请输入书名，如：机械原理"
+    use-action-slot
+    bind:change="inputKey"
+    bind:search="search"
+    shape="round"
+    custom-class='_search'
+    input-class="_input"
+    field-class='_inputs'
+  >
+    <view slot="action" bind:tap="search">搜索</view>
+  </van-search>
+
+
+
+
+
+
+
+<view wx:for="{{list}}" wx:key="*this" >
+   <view wx:for="{{item}}" wx:key="{{item._id}}">
+<view class='card' bindtap='goDetail' data-id='{{item._id}}'>
+<van-row>
+  <van-col span="8" custom-class='pic'>
+  <image src='{{item.bookinfo.pic}}' mode='widthFix' lazy-load='true'></image>
+  </van-col>
+  <van-col span="16">
+  <view class='title text-cut'><text> {{item.bookinfo.title}}(第{{item.bookinfo.edition}})</text></view>
+<view class='author text-cut'><text>{{item.bookinfo.author}}</text></view>
+<view class='date'>
+ <view class='price'>¥{{item.selling}}.00元</view>
+
+  <view class='day'><text>{{item.day}}发布</text></view>
+</view>
+  </van-col>
+</van-row>
+</view>
+   </view>
+</view>
+
+<van-toast id="van-toast" />
+
+
+<view wx:if='{{list[0]==""}}' style="text-align:center;color:#747272;font-size:medium;margin-top:30rpx">--暂无该书结果--</view>

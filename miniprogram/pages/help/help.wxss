@@ -1,0 +1,12 @@
+.scan{
+position: fixed;
+bottom: 30rpx;
+left: 0rpx;
+width: 100%;
+display: flex;
+ justify-content: center;
+}
+
+.scan_button{
+width: 400rpx;
+}
