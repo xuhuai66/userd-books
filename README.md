@@ -5,7 +5,3 @@
 
 https://mp.weixin.qq.com/s/sGQatpo7R6ki_T6UFsL0zw
 
-交流圈地址：
-
-
-https://mp.weixin.qq.com/s/_CmKElgP0B6d_kxyoECHIw
