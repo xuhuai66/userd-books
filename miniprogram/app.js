@@ -15,5 +15,4 @@ App({
     share_title: "「重庆大学二手书」快来分享你的僵尸书吧",
     share_url: "https://qiniu.98api.cn/cqubook/share.php"
   },
-  url: 'https://github.com/xuhuai66'
 })

@@ -38,10 +38,10 @@ Page({
     db.collection('sell').where({
       onsell: 'on',
       timestamp: _.gt(p_timestamp),
-      key: {
-        $regex: '.*' +key + '.*' ,
-        $options: 'i'
-      }
+      key: db.RegExp({
+        regexp: '.*'+key+'.*',
+        options: 'i',
+      })
     }).limit(10).orderBy('timestamp', 'desc')
       .get({
         success(e) {
@@ -63,6 +63,7 @@ Page({
       title: '加载中',
     })
     var that = this;
+    var key = that.data.key;
     var page = that.data.page + 10;
     var p_timestamp = that.data.p_timestamp;
     db.collection('sell').where({
